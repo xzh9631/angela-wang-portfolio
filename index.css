@@ -373,19 +373,20 @@ a {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   filter: blur(32px);
   animation: blob-animate 16s infinite alternate ease-in-out;
-  /* Claude Monet's Water Lilies (Nymphéas) impressionistic pastel palette */
-  background: radial-gradient(circle at 20% 20%, hsl(140, 25%, 82%), transparent 60%),
-              radial-gradient(circle at 80% 20%, hsl(325, 45%, 88%), transparent 60%),
-              radial-gradient(circle at 50% 80%, hsl(195, 40%, 78%), transparent 70%),
-              radial-gradient(circle at 80% 80%, hsl(265, 30%, 82%), transparent 60%),
-              linear-gradient(135deg, hsl(150, 20%, 82%) 0%, hsl(205, 30%, 78%) 100%);
-  opacity: 0.55; /* Higher opacity in daylight mode to fully display Monet's pastel garden */
+  /* Claude Monet's Water Lilies (Nymphéas) deep impressionistic pond water palette */
+  background: radial-gradient(circle at 20% 30%, hsl(172, 45%, 38%) 0%, transparent 60%), /* Deep emerald teal */
+              radial-gradient(circle at 80% 20%, hsl(335, 55%, 82%) 0%, transparent 55%), /* Pastel rose reflection */
+              radial-gradient(circle at 50% 80%, hsl(220, 38%, 42%) 0%, transparent 65%), /* Deep cobalt water shadow */
+              radial-gradient(circle at 85% 75%, hsl(60, 42%, 65%) 0%, transparent 60%),  /* Golden sun reflection */
+              radial-gradient(circle at 45% 25%, hsl(265, 30%, 50%) 0%, transparent 60%),  /* Lavender middle pool */
+              linear-gradient(135deg, hsl(170, 35%, 45%) 0%, hsl(215, 30%, 38%) 100%);
+  opacity: 0.92; /* Keep it nice and rich so the painting's colors pop! */
   transition: opacity var(--transition-speed) ease;
 }
 
 /* Smooth opacity adjustment of the parent blob wrapper when in dark mode */
 [data-theme="dark"] .hero-blob {
-  opacity: 0.22; /* Lower opacity in dark mode to fit Van Gogh's deep atmospheric night */
+  opacity: 0.26; /* Lower opacity in dark mode to fit Van Gogh's deep atmospheric night */
 }
 
 /* Double-surface overlay: Vincent van Gogh's "The Starry Night" deep canvas */
@@ -410,7 +411,7 @@ a {
   opacity: 1;
 }
 
-/* Starry Night SVG Celestial Canvas */
+/* Starry Night SVG Celestial Canvas (Always visible, children groups handle theme) */
 .starry-night-sky {
   position: absolute;
   width: 380px;
@@ -418,12 +419,127 @@ a {
   z-index: 2;
   overflow: visible;
   pointer-events: none;
-  opacity: 0; /* Completely hidden in Daylight/Monet mode for thematic consistency */
-  transition: opacity var(--transition-speed) ease;
+  opacity: 1;
+  transition: mix-blend-mode var(--transition-speed) ease;
 }
 
 [data-theme="dark"] .starry-night-sky {
-  opacity: 1; /* Glowing and rotating fully visible only in midnight/Van Gogh mode */
+  mix-blend-mode: screen; /* Glowing screen blending for midnight/Van Gogh mode */
+}
+
+/* Astrolabe grid: visible in dark mode, de-emphasized in light mode for Monet's pond */
+.celestial-grid {
+  opacity: 0.04; /* Very faint in daylight mode to let Monet's pond speak for itself */
+  transition: opacity var(--transition-speed) ease;
+}
+
+[data-theme="dark"] .celestial-grid {
+  opacity: 0.22; /* Fully clear and luminous in starry night/midnight mode */
+}
+
+/* Monet Water Lilies Daylight Elements Group */
+.monet-elements {
+  opacity: 1;
+  transition: opacity var(--transition-speed) ease;
+}
+
+[data-theme="dark"] .monet-elements {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Weeping Willow Branch styling and sway animations */
+.willow-left {
+  transform: translate(30px, -5px) rotate(0deg);
+  transform-origin: 30px 0px;
+  animation: willow-sway-left 14s infinite alternate ease-in-out;
+}
+
+.willow-right {
+  transform: translate(350px, -10px) scaleX(-1) rotate(0deg);
+  transform-origin: 350px 0px;
+  animation: willow-sway-right 16s infinite alternate ease-in-out;
+}
+
+@keyframes willow-sway-left {
+  0% { transform: translate(30px, -5px) rotate(0deg); }
+  100% { transform: translate(25px, -3px) rotate(4.5deg); }
+}
+
+@keyframes willow-sway-right {
+  0% { transform: translate(350px, -10px) scaleX(-1) rotate(0deg); }
+  100% { transform: translate(355px, -8px) scaleX(-1) rotate(-5.5deg); }
+}
+
+/* Van Gogh Starry Night Midnight Elements Group */
+.van-gogh-elements {
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease;
+}
+
+[data-theme="dark"] .van-gogh-elements {
+  opacity: 1;
+}
+
+/* Monet Pond Drift Animations */
+.pond-ripple {
+  stroke-linecap: round;
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: flow-ripples 22s infinite linear;
+}
+
+.pond-ripple-slow {
+  stroke-linecap: round;
+  stroke-dasharray: 90, 45;
+  animation: flow-ripples-reverse 28s infinite linear;
+}
+
+@keyframes flow-ripples {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+
+@keyframes flow-ripples-reverse {
+  from {
+    stroke-dashoffset: -140;
+  }
+  to {
+    stroke-dashoffset: 280;
+  }
+}
+
+/* Drifting Lily Pads + Flowers */
+.drifting-pad {
+  transform-origin: center;
+}
+
+.pad-drift-1 { animation: drift-1 14s infinite alternate ease-in-out; }
+.pad-drift-2 { animation: drift-2 18s infinite alternate ease-in-out; }
+.pad-drift-3 { animation: drift-3 12s infinite alternate ease-in-out; }
+.pad-drift-4 { animation: drift-4 16s infinite alternate ease-in-out; }
+.pad-drift-5 { animation: drift-5 13s infinite alternate ease-in-out; }
+
+@keyframes drift-1 {
+  0% { transform: translate(130px, 240px) translateY(0px) rotate(0deg); }
+  100% { transform: translate(133px, 238px) translateY(-4px) rotate(4deg); }
+}
+@keyframes drift-2 {
+  0% { transform: translate(250px, 170px) translateY(0px) rotate(0deg) scale(0.9); }
+  100% { transform: translate(248px, 172px) translateY(4px) rotate(-5deg) scale(0.9); }
+}
+@keyframes drift-3 {
+  0% { transform: translate(160px, 290px) translateY(0px) rotate(0deg) scale(0.7); }
+  100% { transform: translate(163px, 288px) translateY(-3px) rotate(3deg) scale(0.7); }
+}
+@keyframes drift-4 {
+  0% { transform: translate(280px, 260px) translateY(0px) rotate(0deg) scale(0.8); }
+  100% { transform: translate(278px, 262px) translateY(3px) rotate(-3deg) scale(0.8); }
+}
+@keyframes drift-5 {
+  0% { transform: translate(100px, 150px) translateY(0px) rotate(0deg) scale(0.6); }
+  100% { transform: translate(101px, 148px) translateY(-2px) rotate(2deg) scale(0.6); }
 }
 
 @keyframes blob-animate {

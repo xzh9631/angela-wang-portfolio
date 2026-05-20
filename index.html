@@ -90,7 +90,7 @@
             <!-- Glowing organic backdrop (acting as the nebula canvas) -->
             <div class="hero-blob"></div>
             
-            <!-- Van Gogh Inspired "Modern Digital Starry Night" Inline SVG -->
+            <!-- Dual-Masterpiece Hero Canvas SVG (Impressionistic Monet Pond & Van Gogh Starry Night) -->
             <svg class="starry-night-sky" viewBox="0 0 400 400" width="380" height="380">
               <defs>
                 <!-- Nebula and Ambient Sky Gradients -->
@@ -123,14 +123,88 @@
                 <filter id="glow-light" x="-20%" y="-20%" width="140%" height="140%">
                   <feGaussianBlur stdDeviation="1.8" result="blur" />
                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
+                </filter>                <!-- Claude Monet Water Lily Pad Template -->
+                <g id="water-lily-pad">
+                  <!-- Soft water drop-shadow under the pad (deep blue-purple, blurred slightly) -->
+                  <ellipse cx="0" cy="4" rx="27" ry="11" fill="hsl(235, 35%, 10%)" opacity="0.4" filter="url(#glow-light)" />
+                  <!-- Base pad layer (deep rich teal-green) -->
+                  <path d="M -26,0 A 26,11 0 1,1 18,-8 L 0,0 Z" fill="hsl(168, 32%, 32%)" />
+                  <!-- Impressionistic textured highlight brushstrokes inside the pad (light green, chartreuse, and gold) -->
+                  <path d="M -22,1 A 22,9 0 0,1 13,-6" fill="none" stroke="hsl(145, 35%, 45%)" stroke-width="1.8" opacity="0.85" />
+                  <path d="M -18,2 A 18,7 0 0,1 9,-4" fill="none" stroke="hsl(82, 38%, 56%)" stroke-width="1.5" opacity="0.9" />
+                  <path d="M -12,3 A 12,5 0 0,1 5,-2" fill="none" stroke="hsl(60, 48%, 70%)" stroke-width="1.2" opacity="0.8" />
+                  <!-- Outer defined rim stroke (light teal) -->
+                  <path d="M -26,0 A 26,11 0 1,1 18,-8 L 0,0 Z" fill="none" stroke="hsl(155, 26%, 52%)" stroke-width="0.85" />
+                </g>
+
+                <!-- Claude Monet Water Lily Flower Template -->
+                <g id="water-lily-flower">
+                  <!-- Soft painterly water reflection directly below the flower (vertical blurred stroke) -->
+                  <path d="M -8,2 C -5,14 -12,24 0,28 C 12,24 5,14 8,2 Z" fill="hsl(330, 55%, 35%)" opacity="0.35" filter="url(#glow-heavy)" />
+                  <!-- Outer purple-indigo sepals supporting the blossom -->
+                  <path d="M -12,-2 C -15,4 -8,8 0,4 C 8,8 15,4 12,-2" fill="none" stroke="hsl(265, 30%, 42%)" stroke-width="1.8" opacity="0.75" />
+                  <!-- LAYER 1: Outer Petals (Deep Lavender Pink) -->
+                  <path d="M -13,0 C -15,-4 -4,-12 0,-12 C 4,-12 15,-4 13,0 C 14,4 10,8 0,8 C -10,8 -14,4 -13,0 Z" fill="hsl(328, 65%, 72%)" opacity="0.9" />
+                  <!-- LAYER 2: Middle Petals (Asymmetric, soft pastel pinks, pointed shapes) -->
+                  <path d="M -1,0 C -5,-4 -12,-8 -9,-11 C -6,-14 -1,-5 -1,0 Z" fill="hsl(330, 80%, 82%)" />
+                  <path d="M 1,0 C 5,-4 12,-8 9,-11 C 6,-14 1,-5 1,0 Z" fill="hsl(330, 80%, 82%)" />
+                  <path d="M 0,0 C -3,-6 -4,-14 0,-15 C 4,-14 3,-6 0,0 Z" fill="hsl(335, 85%, 86%)" />
+                  <path d="M -1,0 C -6,2 -13,-2 -11,-6 C -9,-10 -2,-2 -1,0 Z" fill="hsl(325, 75%, 78%)" />
+                  <path d="M 1,0 C 6,2 13,-2 11,-6 C 9,-10 2,-2 1,0 Z" fill="hsl(325, 75%, 78%)" />
+                  <!-- LAYER 3: Inner Petals (Pointed pure warm white highlights) -->
+                  <path d="M -1,-2 C -4,-6 -9,-10 -7,-12 C -5,-14 -1,-5 -1,-2 Z" fill="#fff" opacity="0.95" />
+                  <path d="M 1,-2 C 4,-6 9,-10 7,-12 C 5,-14 1,-5 1,-2 Z" fill="#fff" opacity="0.95" />
+                  <path d="M 0,-1 C -2,-5 -3,-11 0,-12 C 3,-11 2,-5 0,-1 Z" fill="hsl(330, 95%, 92%)" />
+                  <path d="M -1,-1 C -4,0 -8,-3 -7,-6 C -6,-9 -1,-2 -1,-1 Z" fill="#fff" opacity="0.95" />
+                  <path d="M 1,-1 C 4,0 8,-3 7,-6 C 6,-9 1,-2 1,-1 Z" fill="#fff" opacity="0.95" />
+                  <!-- LAYER 4: Glowing Golden/Saffron Pollen Center Core -->
+                  <circle cx="-1.8" cy="-2.8" r="1.3" fill="hsl(48, 100%, 65%)" filter="url(#glow-light)" />
+                  <circle cx="1.8" cy="-2.8" r="1.3" fill="hsl(48, 100%, 65%)" filter="url(#glow-light)" />
+                  <circle cx="0" cy="-4.8" r="1.6" fill="hsl(44, 100%, 60%)" filter="url(#glow-light)" />
+                  <circle cx="0" cy="-1.8" r="1" fill="hsl(52, 100%, 75%)" />
+                </g>
+
+                <!-- Claude Monet Weeping Willow Branch Template -->
+                <g id="willow-branch">
+                  <!-- Delicate vine that hangs down vertically -->
+                  <path d="M 0,0 C 12,28 6,65 -5,102 C -11,124 -20,146 -16,168" fill="none" stroke="hsl(145, 22%, 28%)" stroke-width="1.1" opacity="0.75" />
+                  <!-- Willow leaves arranged along the vine in sage green and gold -->
+                  <path d="M 1,12 C 8,16 12,14 9,10 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M -2,25 C -10,29 -12,26 -7,22 Z" fill="hsl(150, 22%, 42%)" opacity="0.9" />
+                  <path d="M 3,38 C 12,42 14,38 8,34 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M -4,52 C -13,56 -15,52 -9,48 Z" fill="hsl(150, 22%, 42%)" opacity="0.9" />
+                  <path d="M 2,68 C 11,72 13,67 7,63 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M -4,82 C -13,86 -14,81 -8,77 Z" fill="hsl(150, 22%, 42%)" opacity="0.9" />
+                  <path d="M 1,98 C 9,102 10,97 4,93 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M -3,112 C -10,115 -11,110 -6,107 Z" fill="hsl(150, 22%, 42%)" opacity="0.9" />
+                  <path d="M 0,126 C 7,129 8,124 3,121 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M -2,140 C -8,142 -9,137 -4,135 Z" fill="hsl(150, 22%, 42%)" opacity="0.9" />
+                  <!-- Leaves on opposite side of branch -->
+                  <path d="M 2,18 C 9,20 11,17 7,15 Z" fill="hsl(65, 30%, 48%)" />
+                  <path d="M -3,32 C -10,34 -11,31 -6,29 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M 4,45 C 12,47 13,44 8,42 Z" fill="hsl(65, 30%, 48%)" />
+                  <path d="M -5,60 C -13,62 -14,59 -8,57 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M 3,75 C 11,77 12,74 7,72 Z" fill="hsl(65, 30%, 48%)" />
+                  <path d="M -4,90 C -11,92 -12,89 -7,87 Z" fill="hsl(82, 35%, 52%)" />
+                  <path d="M 2,105 C 9,107 10,104 5,102 Z" fill="hsl(65, 30%, 48%)" />
+                  <path d="M -2,120 C -8,121 -9,118 -5,116 Z" fill="hsl(82, 35%, 52%)" />
+                </g>
+
+                <!-- Claude Monet Floating Single Petal Template -->
+                <g id="floating-petal">
+                  <!-- Blurred under glow of petal reflection -->
+                  <ellipse cx="0" cy="1.5" rx="5.5" ry="2.2" fill="hsl(330, 50%, 30%)" opacity="0.25" filter="url(#glow-light)" />
+                  <!-- Outer soft petal shape -->
+                  <path d="M -5,0 C -7,-3 -3,-7 0,-7 C 3,-7 7,-3 5,0 C 6,2 3,4 0,4 C -3,4 -6,2 -5,0 Z" fill="hsl(330, 82%, 84%)" opacity="0.9" />
+                  <path d="M -5,0 C -7,-3 -3,-7 0,-7 C 3,-7 7,-3 5,0 C 6,2 3,4 0,4 C -3,4 -6,2 -5,0 Z" fill="none" stroke="hsl(328, 70%, 75%)" stroke-width="0.55" />
+                </g>
               </defs>
 
-              <!-- Ambient Glow Base -->
+              <!-- Ambient Glow Base (Sky/Pond Light Backdrop) -->
               <circle cx="200" cy="200" r="180" fill="url(#sky-glow)" />
 
-              <!-- LAYER 1: ASTROLABE ACADEMIC GRID (Static/Very Slow Reference lines) -->
-              <g class="celestial-grid" opacity="0.3">
+              <!-- LAYER 1: ASTROLABE ACADEMIC GRID (Aesthetic geometric backdrop for both themes) -->
+              <g class="celestial-grid" opacity="0.2">
                 <circle cx="200" cy="200" r="175" stroke="var(--border-color)" stroke-width="0.75" fill="none" />
                 <circle cx="200" cy="200" r="160" stroke="var(--accent-primary)" stroke-dasharray="2, 6" stroke-width="1" fill="none" />
                 <circle cx="200" cy="200" r="110" stroke="var(--border-color)" stroke-dasharray="1, 8" stroke-width="0.8" fill="none" />
@@ -143,91 +217,138 @@
                 <text x="8" y="202" font-size="6.5" font-weight="700" fill="var(--accent-secondary)" text-anchor="middle" letter-spacing="1">W</text>
               </g>
 
-              <!-- LAYER 2: THE STARRY NIGHT FLOWING WINDS (Continuous animated strokes) -->
-              <g class="sky-currents">
-                <!-- Large Swirling S-Current in the Center -->
-                <path d="M 60,220 C 130,160 170,280 230,220 C 270,180 300,240 350,200" 
-                      stroke="url(#current-grad-1)" stroke-width="3" fill="none" stroke-linecap="round"
-                      class="current-stroke-heavy" />
-                <path d="M 50,230 C 125,175 165,295 225,230 C 265,190 295,250 340,212" 
-                      stroke="url(#current-grad-2)" stroke-width="1.5" fill="none" stroke-linecap="round"
-                      stroke-dasharray="8, 12" class="current-stroke-dashed" />
-                
-                <!-- Swirling loop brushstroke in center (iconic swirl) -->
-                <path d="M 170,210 C 190,190 220,180 220,210 C 220,230 190,240 180,220 C 170,200 200,160 240,180" 
-                      stroke="url(#current-grad-1)" stroke-width="2" fill="none" stroke-linecap="round"
-                      stroke-dasharray="10, 8" class="current-stroke-loop" />
-                
-                <!-- Secondary wave below -->
-                <path d="M 80,260 C 140,220 180,310 240,260 C 280,230 320,280 360,240" 
-                      stroke="url(#current-grad-2)" stroke-width="1.2" fill="none" stroke-linecap="round"
-                      stroke-dasharray="4, 8" class="current-stroke-thin" opacity="0.75" />
-              </g>
+              <!-- MONET'S DAYLIGHT WATER GARDEN (Faded in during Light Mode) -->
+              <g class="monet-elements">
+                <!-- Dangling Weeping Willow Branches (Slowly swaying) -->
+                <use href="#willow-branch" class="willow-left" />
+                <use href="#willow-branch" class="willow-right" />
 
-              <!-- LAYER 3: CONCENTRIC STAR HALOS (Vibrating gold/blue brushstroke circles) -->
-              <g class="halo-stars">
-                <!-- Star A: Upper-Left (Academic Blue-Gold Star) -->
-                <g class="halo-star-group star-a" transform="translate(100, 110)">
-                  <circle cx="0" cy="0" r="16" stroke="var(--accent-secondary)" stroke-dasharray="2, 5" stroke-width="1" fill="none" opacity="0.45" class="halo-ring-clockwise" />
-                  <circle cx="0" cy="0" r="26" stroke="var(--accent-primary)" stroke-dasharray="4, 8" stroke-width="0.85" fill="none" opacity="0.3" class="halo-ring-counter" />
-                  <circle cx="0" cy="0" r="36" stroke="var(--accent-secondary)" stroke-dasharray="1, 7" stroke-width="0.75" fill="none" opacity="0.2" class="halo-ring-clockwise" />
-                  <circle cx="0" cy="0" r="5" fill="var(--accent-secondary)" filter="url(#glow-heavy)" class="star-core" />
-                  <circle cx="0" cy="0" r="1.5" fill="#fff" />
+                <!-- Drifting Pond Water Ripples (Impressionist dashed ripples) -->
+                <path d="M 60,180 C 130,174 190,186 240,180 C 290,174 330,184 370,180" 
+                      stroke="hsl(188, 55%, 72%)" stroke-width="1.8" fill="none" stroke-linecap="round" class="pond-ripple" opacity="0.85" />
+                <path d="M 40,230 C 100,224 160,236 220,230 C 280,224 320,234 360,230" 
+                      stroke="hsl(196, 45%, 76%)" stroke-width="2.2" fill="none" stroke-linecap="round" class="pond-ripple-slow" opacity="0.9" />
+                <path d="M 80,290 C 140,284 200,296 260,290 C 310,284 340,294 380,290" 
+                      stroke="hsl(152, 35%, 70%)" stroke-width="1.5" fill="none" stroke-linecap="round" class="pond-ripple" opacity="0.75" />
+                
+                <!-- Floating Lily Pads & Blooming Water Lilies (drifting dynamically) -->
+                <g class="drifting-pad pad-drift-1">
+                  <use href="#water-lily-pad" />
+                  <use href="#water-lily-flower" x="3" y="-4" />
                 </g>
 
-                <!-- Star B: Center-Right (Deep Cobalt Star) -->
-                <g class="halo-star-group star-b" transform="translate(280, 240)">
-                  <circle cx="0" cy="0" r="18" stroke="var(--accent-primary)" stroke-dasharray="3, 4" stroke-width="1.2" fill="none" opacity="0.4" class="halo-ring-counter" />
-                  <circle cx="0" cy="0" r="30" stroke="var(--accent-secondary)" stroke-dasharray="2, 8" stroke-width="0.8" fill="none" opacity="0.35" class="halo-ring-clockwise" />
-                  <circle cx="0" cy="0" r="6" fill="hsl(190, 85%, 65%)" filter="url(#glow-heavy)" class="star-core" />
-                  <circle cx="0" cy="0" r="2" fill="#fff" />
+                <g class="drifting-pad pad-drift-2">
+                  <use href="#water-lily-pad" />
+                  <use href="#water-lily-flower" x="-2" y="2" />
                 </g>
 
-                <!-- Star C: Lower-Left (Small Gold Star) -->
-                <g class="halo-star-group star-c" transform="translate(140, 310)">
-                  <circle cx="0" cy="0" r="12" stroke="var(--accent-secondary)" stroke-dasharray="2, 3" stroke-width="1" fill="none" opacity="0.5" class="halo-ring-clockwise" />
-                  <circle cx="0" cy="0" r="20" stroke="var(--accent-primary)" stroke-dasharray="3, 6" stroke-width="0.75" fill="none" opacity="0.25" class="halo-ring-counter" />
-                  <circle cx="0" cy="0" r="4.5" fill="var(--accent-secondary)" filter="url(#glow-light)" class="star-core" />
-                  <circle cx="0" cy="0" r="1" fill="#fff" />
+                <g class="drifting-pad pad-drift-3">
+                  <use href="#water-lily-pad" />
+                  <use href="#water-lily-flower" x="2" y="-3" transform="scale(0.82)" />
                 </g>
-                
-                <!-- Star D: Upper-Middle (Brilliant Gold Star) -->
-                <g class="halo-star-group star-d" transform="translate(200, 75)">
-                  <circle cx="0" cy="0" r="14" stroke="var(--accent-secondary)" stroke-dasharray="2, 4" stroke-width="1" fill="none" opacity="0.5" class="halo-ring-clockwise" />
-                  <circle cx="0" cy="0" r="22" stroke="var(--accent-primary)" stroke-dasharray="4, 6" stroke-width="0.75" fill="none" opacity="0.3" class="halo-ring-counter" />
-                  <circle cx="0" cy="0" r="5" fill="var(--accent-secondary)" filter="url(#glow-heavy)" class="star-core" />
-                  <circle cx="0" cy="0" r="1.5" fill="#fff" />
+
+                <g class="drifting-pad pad-drift-4">
+                  <!-- Leaf-only Lily Pad drifting elegantly -->
+                  <use href="#water-lily-pad" />
+                </g>
+
+                <g class="drifting-pad pad-drift-5">
+                  <use href="#water-lily-pad" />
+                  <use href="#water-lily-flower" x="-1" y="-2" transform="scale(0.72)" />
+                </g>
+
+                <!-- Scattered Floating Single Petals -->
+                <g class="drifting-pad pad-drift-2" transform="scale(0.8)">
+                  <use href="#floating-petal" x="-45" y="45" />
+                </g>
+                <g class="drifting-pad pad-drift-5" transform="scale(0.9)">
+                  <use href="#floating-petal" x="35" y="-35" />
                 </g>
               </g>
 
-              <!-- LAYER 4: THE ICONIC CRESCENT MOON (Multi-layered glowing gold-orange crescent) -->
-              <g class="crescent-moon" transform="translate(310, 85)">
-                <!-- Backing moon glow aura -->
-                <circle cx="0" cy="0" r="40" fill="url(#moon-glow)" filter="url(#glow-heavy)" class="moon-aura-pulse" />
-                <!-- Layered golden brush circles around the moon -->
-                <circle cx="0" cy="0" r="32" stroke="var(--accent-secondary)" stroke-dasharray="3, 8" stroke-width="1" fill="none" opacity="0.3" class="halo-ring-clockwise" />
-                <circle cx="0" cy="0" r="24" stroke="var(--accent-secondary)" stroke-dasharray="1, 6" stroke-width="1.2" fill="none" opacity="0.4" class="halo-ring-counter" />
-                
-                <!-- Exact SVG crescent path (subtly shifted to align correctly) -->
-                <path d="M -18,-18 A 22,22 0 1,0 18,18 A 18,18 0 1,1 -18,-18 Z" 
-                      fill="var(--accent-secondary)" filter="url(#glow-heavy)" class="moon-shape" />
-                <!-- Inner super-bright moon crescent core -->
-                <path d="M -18,-18 A 22,22 0 1,0 18,18 A 18,18 0 1,1 -18,-18 Z" 
-                      fill="#fff" opacity="0.85" transform="scale(0.85)" />
-              </g>
+              <!-- VAN GOGH'S MIDNIGHT SKY (Faded in during Dark Mode) -->
+              <g class="van-gogh-elements">
+                <!-- LAYER 2: THE STARRY NIGHT FLOWING WINDS (Continuous animated strokes) -->
+                <g class="sky-currents">
+                  <!-- Large Swirling S-Current in the Center -->
+                  <path d="M 60,220 C 130,160 170,280 230,220 C 270,180 300,240 350,200" 
+                        stroke="url(#current-grad-1)" stroke-width="3" fill="none" stroke-linecap="round"
+                        class="current-stroke-heavy" />
+                  <path d="M 50,230 C 125,175 165,295 225,230 C 265,190 295,250 340,212" 
+                        stroke="url(#current-grad-2)" stroke-width="1.5" fill="none" stroke-linecap="round"
+                        stroke-dasharray="8, 12" class="current-stroke-dashed" />
+                  
+                  <!-- Swirling loop brushstroke in center (iconic swirl) -->
+                  <path d="M 170,210 C 190,190 220,180 220,210 C 220,230 190,240 180,220 C 170,200 200,160 240,180" 
+                        stroke="url(#current-grad-1)" stroke-width="2" fill="none" stroke-linecap="round"
+                        stroke-dasharray="10, 8" class="current-stroke-loop" />
+                  
+                  <!-- Secondary wave below -->
+                  <path d="M 80,260 C 140,220 180,310 240,260 C 280,230 320,280 360,240" 
+                        stroke="url(#current-grad-2)" stroke-width="1.2" fill="none" stroke-linecap="round"
+                        stroke-dasharray="4, 8" class="current-stroke-thin" opacity="0.75" />
+                </g>
 
-              <!-- LAYER 5: DISTANT TWINKLING STARDUST (Random tiny twinkling points) -->
-              <g class="star-dust">
-                <circle cx="50" cy="150" r="0.8" fill="#fff" class="dust-twinkle-fast" />
-                <circle cx="85" cy="65" r="1.2" fill="hsl(190, 85%, 65%)" class="dust-twinkle-slow" filter="url(#glow-light)" />
-                <circle cx="150" cy="40" r="1" fill="#fff" class="dust-twinkle-medium" />
-                <circle cx="255" cy="140" r="0.8" fill="#fff" class="dust-twinkle-fast" />
-                <circle cx="340" cy="170" r="1.5" fill="var(--accent-secondary)" class="dust-twinkle-slow" filter="url(#glow-light)" />
-                <circle cx="360" cy="290" r="1" fill="#fff" class="dust-twinkle-medium" />
-                <circle cx="215" cy="350" r="0.8" fill="#fff" class="dust-twinkle-fast" />
-                <circle cx="75" cy="360" r="1.2" fill="hsl(190, 85%, 65%)" class="dust-twinkle-slow" />
-                <circle cx="225" cy="160" r="1" fill="#fff" class="dust-twinkle-medium" />
-                <circle cx="265" cy="45" r="1.5" fill="var(--accent-secondary)" class="dust-twinkle-fast" filter="url(#glow-light)" />
+                <!-- LAYER 3: CONCENTRIC STAR HALOS (Vibrating gold/blue brushstroke circles) -->
+                <g class="halo-stars">
+                  <!-- Star A: Upper-Left (Academic Blue-Gold Star) -->
+                  <g class="halo-star-group star-a" transform="translate(100, 110)">
+                    <circle cx="0" cy="0" r="16" stroke="var(--accent-secondary)" stroke-dasharray="2, 5" stroke-width="1" fill="none" opacity="0.45" class="halo-ring-clockwise" />
+                    <circle cx="0" cy="0" r="26" stroke="var(--accent-primary)" stroke-dasharray="4, 8" stroke-width="0.85" fill="none" opacity="0.3" class="halo-ring-counter" />
+                    <circle cx="0" cy="0" r="36" stroke="var(--accent-secondary)" stroke-dasharray="1, 7" stroke-width="0.75" fill="none" opacity="0.2" class="halo-ring-clockwise" />
+                    <circle cx="0" cy="0" r="5" fill="var(--accent-secondary)" filter="url(#glow-heavy)" class="star-core" />
+                    <circle cx="0" cy="0" r="1.5" fill="#fff" />
+                  </g>
+
+                  <!-- Star B: Center-Right (Deep Cobalt Star) -->
+                  <g class="halo-star-group star-b" transform="translate(280, 240)">
+                    <circle cx="0" cy="0" r="18" stroke="var(--accent-primary)" stroke-dasharray="3, 4" stroke-width="1.2" fill="none" opacity="0.4" class="halo-ring-counter" />
+                    <circle cx="0" cy="0" r="30" stroke="var(--accent-secondary)" stroke-dasharray="2, 8" stroke-width="0.8" fill="none" opacity="0.35" class="halo-ring-clockwise" />
+                    <circle cx="0" cy="0" r="6" fill="hsl(190, 85%, 65%)" filter="url(#glow-heavy)" class="star-core" />
+                    <circle cx="0" cy="0" r="2" fill="#fff" />
+                  </g>
+
+                  <!-- Star C: Lower-Left (Small Gold Star) -->
+                  <g class="halo-star-group star-c" transform="translate(140, 310)">
+                    <circle cx="0" cy="0" r="12" stroke="var(--accent-secondary)" stroke-dasharray="2, 3" stroke-width="1" fill="none" opacity="0.5" class="halo-ring-clockwise" />
+                    <circle cx="0" cy="0" r="20" stroke="var(--accent-primary)" stroke-dasharray="3, 6" stroke-width="0.75" fill="none" opacity="0.25" class="halo-ring-counter" />
+                    <circle cx="0" cy="0" r="4.5" fill="var(--accent-secondary)" filter="url(#glow-light)" class="star-core" />
+                    <circle cx="0" cy="0" r="1" fill="#fff" />
+                  </g>
+                  
+                  <!-- Star D: Upper-Middle (Brilliant Gold Star) -->
+                  <g class="halo-star-group star-d" transform="translate(200, 75)">
+                    <circle cx="0" cy="0" r="14" stroke="var(--accent-secondary)" stroke-dasharray="2, 4" stroke-width="1" fill="none" opacity="0.5" class="halo-ring-clockwise" />
+                    <circle cx="0" cy="0" r="22" stroke="var(--accent-primary)" stroke-dasharray="4, 6" stroke-width="0.75" fill="none" opacity="0.3" class="halo-ring-counter" />
+                    <circle cx="0" cy="0" r="5" fill="var(--accent-secondary)" filter="url(#glow-heavy)" class="star-core" />
+                    <circle cx="0" cy="0" r="1.5" fill="#fff" />
+                  </g>
+                </g>
+
+                <!-- LAYER 4: THE ICONIC CRESCENT MOON (Multi-layered glowing crescent) -->
+                <g class="crescent-moon" transform="translate(310, 85)">
+                  <circle cx="0" cy="0" r="40" fill="url(#moon-glow)" filter="url(#glow-heavy)" class="moon-aura-pulse" />
+                  <circle cx="0" cy="0" r="32" stroke="var(--accent-secondary)" stroke-dasharray="3, 8" stroke-width="1" fill="none" opacity="0.3" class="halo-ring-clockwise" />
+                  <circle cx="0" cy="0" r="24" stroke="var(--accent-secondary)" stroke-dasharray="1, 6" stroke-width="1.2" fill="none" opacity="0.4" class="halo-ring-counter" />
+                  <path d="M -18,-18 A 22,22 0 1,0 18,18 A 18,18 0 1,1 -18,-18 Z" 
+                        fill="var(--accent-secondary)" filter="url(#glow-heavy)" class="moon-shape" />
+                  <path d="M -18,-18 A 22,22 0 1,0 18,18 A 18,18 0 1,1 -18,-18 Z" 
+                        fill="#fff" opacity="0.85" transform="scale(0.85)" />
+                </g>
+
+                <!-- LAYER 5: DISTANT TWINKLING STARDUST -->
+                <g class="star-dust">
+                  <circle cx="50" cy="150" r="0.8" fill="#fff" class="dust-twinkle-fast" />
+                  <circle cx="85" cy="65" r="1.2" fill="hsl(190, 85%, 65%)" class="dust-twinkle-slow" filter="url(#glow-light)" />
+                  <circle cx="150" cy="40" r="1" fill="#fff" class="dust-twinkle-medium" />
+                  <circle cx="255" cy="140" r="0.8" fill="#fff" class="dust-twinkle-fast" />
+                  <circle cx="340" cy="170" r="1.5" fill="var(--accent-secondary)" class="dust-twinkle-slow" filter="url(#glow-light)" />
+                  <circle cx="360" cy="290" r="1" fill="#fff" class="dust-twinkle-medium" />
+                  <circle cx="215" cy="350" r="0.8" fill="#fff" class="dust-twinkle-fast" />
+                  <circle cx="75" cy="360" r="1.2" fill="hsl(190, 85%, 65%)" class="dust-twinkle-slow" />
+                  <circle cx="225" cy="160" r="1" fill="#fff" class="dust-twinkle-medium" />
+                  <circle cx="265" cy="45" r="1.5" fill="var(--accent-secondary)" class="dust-twinkle-fast" filter="url(#glow-light)" />
+                </g>
               </g>
             </svg>
           </div>
