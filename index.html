@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="College Application Portfolio of Angela Wang — 17-year-old creative technologist, coder, and designer merging software engineering, HCI, and fine arts.">
+  <title>Angela Wang | Portfolio & Creative Technologist</title>
+  
+  <!-- Modern Fonts: Lora (Academic Serif) & Plus Jakarta Sans (Sleek Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- FLOATING NAVIGATION BAR -->
+  <header id="main-header" class="glass-header">
+    <div class="header-container">
+      <a href="#" class="logo-link">
+        <span class="logo-text">Angela Wang</span>
+        <span class="logo-badge">Class of 2027</span>
+      </a>
+      
+      <nav class="nav-menu">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#honors" class="nav-item">Honors</a>
+        <a href="#contact" class="nav-item">Contact</a>
+      </nav>
+      
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a href="#contact" class="cta-nav-btn">Get In Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-eyebrow fade-in">Creative Tech Student & Violinist</div>
+          <h1 class="hero-title fade-in delay-1">Designing software and systems for real-world impact and community empowerment.</h1>
+          <p class="hero-subtitle fade-in delay-2">
+            I am a high school senior at Monta Vista High merging software engineering, robotics, and classical music to build purposeful tech solutions.
+          </p>
+          
+          <!-- Key Academic Badges -->
+          <div class="academic-stats fade-in delay-3">
+            <div class="stat-badge">
+              <span class="stat-num" data-val="3.85">0.0</span>
+              <span class="stat-lbl">GPA (Unweighted)</span>
+            </div>
+            <div class="stat-badge">
+              <span class="stat-num" data-val="1530">0</span>
+              <span class="stat-lbl">SAT Score</span>
+            </div>
+            <div class="stat-badge">
+              <span class="stat-num" data-val="6">0</span>
+              <span class="stat-lbl">AP Passed (6 Planned for Senior Year)</span>
+            </div>
+          </div>
+
+          <div class="hero-actions fade-in delay-4">
+            <a href="#projects" class="primary-btn">Explore Projects</a>
+            <a href="#about" class="secondary-btn">Learn More About Me</a>
+          </div>
+        </div>
+        
+        <div class="hero-visual fade-in delay-3">
+          <div class="hero-blob-wrapper">
+            <div class="hero-blob"></div>
+            <div class="hero-blob-bg"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator">
+        <span class="scroll-mouse">
+          <span class="scroll-wheel"></span>
+        </span>
+        <span class="scroll-text">Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">About Me</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="about-grid">
+          <div class="about-image-wrapper">
+            <div class="about-portrait-frame">
+              <img src="assets/portrait.png" alt="Angela Wang Portrait" class="about-portrait">
+              <div class="frame-border"></div>
+            </div>
+          </div>
+          
+          <div class="about-info">
+            <h3 class="about-heading">Hi, I'm Angela.</h3>
+            <p class="about-text">
+              I am currently a senior at Monta Vista High in Cupertino, CA. Guided by a passion for STEM, software engineering, and classical violin, I design and build end-to-end technology solutions to solve real-world problems.
+            </p>
+            <p class="about-text">
+              My academic journey is defined by a rigorous interdisciplinary approach: combining the robust logical foundations of **computer science** and **AP Physics** with the expressive precision of **classical violin performance** (performing for ASTA and CPYO). From developing full-stack database reminder systems to programming autonomous VEX robotic systems in C++, I love transforming complex ideas into functional products.
+            </p>
+            
+            <div class="skills-showcase">
+              <h4 class="skills-title">Areas of Passion & Toolkit</h4>
+              <div class="skills-tags">
+                <span class="skill-tag">Software Engineering</span>
+                <span class="skill-tag">Python & SQL</span>
+                <span class="skill-tag">C++ & VS Code</span>
+                <span class="skill-tag">Claude Code / Cursor</span>
+                <span class="skill-tag">VEX Robotics (V5)</span>
+                <span class="skill-tag">Mechanical Build</span>
+                <span class="skill-tag">Violin Performance</span>
+                <span class="skill-tag">Ensemble Playing</span>
+                <span class="skill-tag">Competitive Swimming</span>
+                <span class="skill-tag">Mandarin (Native)</span>
+                <span class="skill-tag">French</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Selected Projects</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <!-- Filter Navigation -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="software">Software & Tech</button>
+          <button class="filter-btn" data-filter="robotics">Robotics</button>
+          <button class="filter-btn" data-filter="service">Community & Music</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: MVMB Reminder System -->
+          <div class="project-card" data-category="software">
+            <div class="project-img-container">
+              <div class="project-art-placeholder reminder-bg">
+                <svg viewBox="0 0 100 100" class="project-svg-graphic">
+                  <rect x="20" y="25" width="60" height="50" rx="4" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                  <path d="M20 30 L50 50 L80 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                  <circle cx="50" cy="62" r="10" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+                  <path d="M50 56 L50 64 L54 64" fill="none" stroke="currentColor" stroke-width="1.5"></path>
+                </svg>
+              </div>
+              <span class="project-tag">Full-Stack Tech</span>
+            </div>
+            <div class="project-details">
+              <div class="project-award">📈 90%+ Parent Payment Rate achieved</div>
+              <h3 class="project-name">MVMB Payment Reminder</h3>
+              <p class="project-desc">
+                An end-to-end automated payment reminder web platform designed and deployed for the Monta Vista Music Boosters. Configured a billing input UI and a Python/SQL backend to automatically generate and send outstanding balance notices.
+              </p>
+              <div class="project-links">
+                <span class="project-tech-badge">Python</span>
+                <span class="project-tech-badge">SQL</span>
+                <span class="project-tech-badge">Claude Code</span>
+                <span class="project-tech-badge">mvmb-finance.inhouses.net</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: LightWAN Intern App -->
+          <div class="project-card" data-category="software">
+            <div class="project-img-container">
+              <div class="project-art-placeholder parser-bg">
+                <svg viewBox="0 0 100 100" class="project-svg-graphic">
+                  <path d="M30 15 L60 15 L75 30 L75 85 L30 85 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                  <path d="M60 15 L60 30 L75 30" fill="none" stroke="currentColor" stroke-width="2"></path>
+                  <circle cx="50" cy="55" r="12" fill="none" stroke="currentColor" stroke-width="2"></circle>
+                  <path d="M40 73 C40 65 44 65 50 65 C56 65 60 65 60 73" fill="none" stroke="currentColor" stroke-width="2"></path>
+                </svg>
+              </div>
+              <span class="project-tag">Software Intern</span>
+            </div>
+            <div class="project-details">
+              <div class="project-award">🏆 Chairman’s Award for Young Leaders</div>
+              <h3 class="project-name">LightWAN Resume Parser</h3>
+              <p class="project-desc">
+                Led a team of two high school interns under the guidance of senior software engineers at LightWAN Tech. Designed a parsing application for inbound job applications to streamline the recruiters' engineering interview pipeline.
+              </p>
+              <div class="project-links">
+                <span class="project-tech-badge">Python</span>
+                <span class="project-tech-badge">Team Lead</span>
+                <span class="project-tech-badge">Resume Parsing API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: VEX V5 Robotics -->
+          <div class="project-card" data-category="robotics">
+            <div class="project-img-container">
+              <div class="project-art-placeholder robotics-bg">
+                <svg viewBox="0 0 100 100" class="project-svg-graphic">
+                  <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" stroke-width="2"></circle>
+                  <path d="M50 15 L50 32" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M50 68 L50 85" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M15 50 L32 50" stroke="currentColor" stroke-width="2"></path>
+                  <path d="M68 50 L85 50" stroke="currentColor" stroke-width="2"></path>
+                  <circle cx="50" cy="50" r="6" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+                  <rect x="25" y="25" width="50" height="50" rx="6" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3"></rect>
+                </svg>
+              </div>
+              <span class="project-tag">Robotics & C++</span>
+            </div>
+            <div class="project-details">
+              <div class="project-award">🤖 State & US Open Qualifier (2023–2026)</div>
+              <h3 class="project-name">VEX V5 Mechanical Firmware</h3>
+              <p class="project-desc">
+                Lead programmer and builder on a competitive 6–8 member robotics team. Scripted robot mechanical firmware in C++ and VS Code, assembled intake/drivetrain subsystems, and mentored junior programmers.
+              </p>
+              <div class="project-links">
+                <span class="project-tech-badge">C++</span>
+                <span class="project-tech-badge">VS Code</span>
+                <span class="project-tech-badge">VEX Robotics</span>
+                <span class="project-tech-badge">Mechanical Build</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: FCSN Mentorship -->
+          <div class="project-card" data-category="service">
+            <div class="project-img-container">
+              <div class="project-art-placeholder mentorship-bg">
+                <svg viewBox="0 0 100 100" class="project-svg-graphic">
+                  <path d="M25 45 L75 45" stroke="currentColor" stroke-width="3" stroke-linecap="round"></path>
+                  <rect x="25" y="50" width="10" height="25" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                  <rect x="37" y="50" width="10" height="25" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                  <rect x="49" y="50" width="10" height="25" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                  <rect x="61" y="50" width="10" height="25" fill="none" stroke="currentColor" stroke-width="1.5"></rect>
+                  <circle cx="40" cy="25" r="5" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                  <path d="M45 25 Q55 20 60 25" stroke="currentColor" stroke-width="2" fill="none"></path>
+                  <circle cx="60" cy="25" r="5" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                </svg>
+              </div>
+              <span class="project-tag">Music & Service</span>
+            </div>
+            <div class="project-details">
+              <div class="project-award">🎻 Specialized Music Volunteer Instructor</div>
+              <h3 class="project-name">Special Needs Music Mentorship</h3>
+              <p class="project-desc">
+                Designed custom, weekly percussion lesson plans for autistic and neurodivergent learners over two years at FCSN. Directed percussion classes and performed alongside students at the annual fundraising GALA.
+              </p>
+              <div class="project-links">
+                <span class="project-tech-badge">Music Instruction</span>
+                <span class="project-tech-badge">Autism/ND Support</span>
+                <span class="project-tech-badge">Marimba Mallets</span>
+                <span class="project-tech-badge">FCSN Volunteer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HONORS & LEADERSHIP TIMELINE -->
+    <section id="honors" class="honors-section scroll-reveal">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Leadership & Accolades</h2>
+          <div class="section-divider"></div>
+        </div>
+        
+        <div class="timeline">
+          <!-- Timeline Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025 - Present (Grade 11 - Present)</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Independent Project Lead & Volunteer</h3>
+              <h4 class="timeline-subtitle">Monta Vista Music Boosters — Cupertino, CA</h4>
+              <p class="timeline-text">
+                Designed, developed, and deployed an automated payment reminder system end-to-end using Claude Code, Python, and SQL. Configured a frontend UI for outstanding balance inputs, automatically generating customized email notices. Successfully raised parent collection rates from 75% to 92%, saving dozens of hours of manual administrative overhead.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024 (Grade 10)</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Software Engineering Intern</h3>
+              <h4 class="timeline-subtitle">LightWAN Tech — Cupertino, CA</h4>
+              <p class="timeline-text">
+                Led a team of two high school interns under the guidance of senior software engineers to build a full-stack resume parsing application. Designed the interface and parser logic to help recruiters efficiently filter candidates and feed LightWAN's internal talent pipeline. Presented the final product at a company-wide all-hands meeting and won the **Chairman's Award for Young Leaders**.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - Present (Grade 7 - Present)</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Lead Programmer & Builder</h3>
+              <h4 class="timeline-subtitle">VEX V5 Robotics — Cupertino, CA</h4>
+              <p class="timeline-text">
+                Lead programming and structural mechanical build on a competitive 6–8 member robotics team. Scripted robot mechanical firmware in C++ and VS Code, assembled main components (drivetrain, intake), and mentored junior members. Qualified for the VEX Robotics Competition State Championships (2023–2026) and the RobotEvents US Open Robotics Championships (2023–2025), earning multiple Design, Excellence, and Judges' Awards.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024 - Present (Grade 10 - Present)</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Violinist</h3>
+              <h4 class="timeline-subtitle">Monta Vista Chamber Orchestra — Cupertino, CA</h4>
+              <p class="timeline-text">
+                Accepted into the elite 35-student chamber orchestra, dedicating 4 hours of in-school practice and 3 hours of independent home study weekly. Performed 8 times annually in holiday concerts, school district events, and most notably for the **American String Teachers’ Association (ASTA)** national guidelines demonstration.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2023 (Grade 9)</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">UN Program Scholar</h3>
+              <h4 class="timeline-subtitle">New York Times Summer Academy — New York, NY</h4>
+              <p class="timeline-text">
+                Selected for the "Inside the United Nations" academic program with 18 high school students globally. Focused on global politics, diplomacy, and human rights. Attended lectures led by NYT journalists and UN officials, and successfully debated in a Model UN-style simulation on the Sudan humanitarian crisis.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - 2022 (Grade 7 - 8)</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Violinist</h3>
+              <h4 class="timeline-subtitle">California Philharmonic Youth Orchestra</h4>
+              <p class="timeline-text">
+                Auditioned and accepted into the regional youth orchestra composed of 50 select student musicians. Attended weekly 3-hour ensemble rehearsals and maintained 5 hours of private practice. Performed 6 public seasonal concerts featuring classical pieces by Beethoven, Mozart, and Elgar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Timeline Item 7 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - 2023 (Grade 7 - 9)</div>
+            <div class="timeline-content">
+              <h3 class="timeline-title">Competitive Swimmer</h3>
+              <h4 class="timeline-subtitle">De Anza Cupertino Aquatics Club</h4>
+              <p class="timeline-text">
+                Competed in a USA Swimming-affiliated swim club with a cohort of ~40 elite swimmers. Dedicated extensive hours to dryland and pool conditioning, representing the club in butterfly and freestyle 50-meter and 100-meter events.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section scroll-reveal">
+      <div class="container">
+        <div class="contact-card-wrapper">
+          <div class="contact-grid">
+            <div class="contact-info-block">
+              <h2 class="contact-title">Let's Connect</h2>
+              <p class="contact-intro">
+                Thank you for visiting my digital space. Whether you are an admissions officer, a fellow student, or an interdisciplinary collaborator, I would love to hear from you.
+              </p>
+              
+              <div class="contact-meta">
+                <div class="meta-item">
+                  <span class="meta-icon">✉</span>
+                  <a href="mailto:angela.wang.9623@gmail.com" class="meta-link">angela.wang.9623@gmail.com</a>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-icon">📞</span>
+                  <a href="tel:4082425836" class="meta-link">(408) 242-5836</a>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-icon">📍</span>
+                  <span class="meta-text">Cupertino, California</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="contact-form-block">
+              <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                  <label for="form-name" class="form-label">Full Name</label>
+                  <input type="text" id="form-name" name="name" class="form-input" placeholder="Your Name" required>
+                  <span class="form-error">Please enter your name</span>
+                </div>
+                
+                <div class="form-group">
+                  <label for="form-email" class="form-label">Email Address</label>
+                  <input type="email" id="form-email" name="email" class="form-input" placeholder="you@example.com" required>
+                  <span class="form-error">Please enter a valid email address</span>
+                </div>
+                
+                <div class="form-group">
+                  <label for="form-message" class="form-label">Your Message</label>
+                  <textarea id="form-message" name="message" class="form-input text-area" placeholder="How can we collaborate?" required></textarea>
+                  <span class="form-error">Please enter a message</span>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+              </form>
+              
+              <div id="form-success" class="form-success-message" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h3 class="success-title">Thank you!</h3>
+                <p class="success-desc">Your message has been sent successfully. Angela will get back to you soon.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <p class="footer-copy">&copy; <span id="current-year"></span> Angela Wang. All rights reserved.</p>
+      <p class="footer-tagline">Building the Future at the Intersection of STEAM.</p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
