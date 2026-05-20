@@ -367,16 +367,50 @@ a {
 }
 
 .hero-blob {
-  width: 350px;
-  height: 350px;
-  background: var(--accent-gradient);
+  width: 340px;
+  height: 340px;
+  position: absolute;
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  opacity: 0.12;
-  filter: blur(20px);
-  animation: blob-animate 12s infinite alternate ease-in-out;
+  filter: blur(32px);
+  animation: blob-animate 16s infinite alternate ease-in-out;
+  /* Claude Monet's Water Lilies (Nymphéas) impressionistic pastel palette */
+  background: radial-gradient(circle at 20% 20%, hsl(140, 25%, 82%), transparent 60%),
+              radial-gradient(circle at 80% 20%, hsl(325, 45%, 88%), transparent 60%),
+              radial-gradient(circle at 50% 80%, hsl(195, 40%, 78%), transparent 70%),
+              radial-gradient(circle at 80% 80%, hsl(265, 30%, 82%), transparent 60%),
+              linear-gradient(135deg, hsl(150, 20%, 82%) 0%, hsl(205, 30%, 78%) 100%);
+  opacity: 0.55; /* Higher opacity in daylight mode to fully display Monet's pastel garden */
+  transition: opacity var(--transition-speed) ease;
 }
 
-/* Starry Night Canvas */
+/* Smooth opacity adjustment of the parent blob wrapper when in dark mode */
+[data-theme="dark"] .hero-blob {
+  opacity: 0.22; /* Lower opacity in dark mode to fit Van Gogh's deep atmospheric night */
+}
+
+/* Double-surface overlay: Vincent van Gogh's "The Starry Night" deep canvas */
+.hero-blob::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: radial-gradient(circle at 30% 30%, hsl(210, 85%, 20%), transparent 60%),
+              radial-gradient(circle at 70% 70%, hsl(38, 70%, 15%), transparent 60%),
+              linear-gradient(135deg, hsl(210, 85%, 70%) 0%, hsl(38, 70%, 65%) 100%);
+  opacity: 0; /* Fully hidden in daylight/Monet mode */
+  transition: opacity var(--transition-speed) ease;
+  pointer-events: none;
+}
+
+/* Reveal Van Gogh's Starry Night canvas in Dark Mode */
+[data-theme="dark"] .hero-blob::after {
+  opacity: 1;
+}
+
+/* Starry Night SVG Celestial Canvas */
 .starry-night-sky {
   position: absolute;
   width: 380px;
@@ -384,40 +418,12 @@ a {
   z-index: 2;
   overflow: visible;
   pointer-events: none;
-  mix-blend-mode: multiply; /* Soft multiply blending for daylight/Monet mode */
-  opacity: 0.82;
-  transition: mix-blend-mode var(--transition-speed) ease, opacity var(--transition-speed) ease;
+  opacity: 0; /* Completely hidden in Daylight/Monet mode for thematic consistency */
+  transition: opacity var(--transition-speed) ease;
 }
 
 [data-theme="dark"] .starry-night-sky {
-  mix-blend-mode: screen; /* Glowing screen blending for midnight/Van Gogh mode */
-  opacity: 1;
-}
-
-/* Layer 1: Background Nebula Canvas */
-.hero-blob {
-  width: 340px;
-  height: 340px;
-  /* Claude Monet's Water Lilies (Nymphéas) impressionistic pastel palette */
-  background: radial-gradient(circle at 20% 20%, hsl(140, 25%, 82%), transparent 60%),
-              radial-gradient(circle at 80% 20%, hsl(325, 45%, 88%), transparent 60%),
-              radial-gradient(circle at 50% 80%, hsl(195, 40%, 78%), transparent 70%),
-              radial-gradient(circle at 80% 80%, hsl(265, 30%, 82%), transparent 60%),
-              linear-gradient(135deg, hsl(150, 20%, 82%) 0%, hsl(205, 30%, 78%) 100%);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  opacity: 0.42; /* Slightly higher opacity to manifest Monet's beautiful pastel colors */
-  filter: blur(32px);
-  animation: blob-animate 16s infinite alternate ease-in-out;
-  position: absolute;
-  transition: background var(--transition-speed) ease, opacity var(--transition-speed) ease;
-}
-
-/* Dark Mode: Vincent van Gogh's "The Starry Night" deep canvas */
-[data-theme="dark"] .hero-blob {
-  background: radial-gradient(circle at 30% 30%, hsl(210, 85%, 20%), transparent 60%),
-              radial-gradient(circle at 70% 70%, hsl(38, 70%, 15%), transparent 60%),
-              linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  opacity: 0.18;
+  opacity: 1; /* Glowing and rotating fully visible only in midnight/Van Gogh mode */
 }
 
 @keyframes blob-animate {
