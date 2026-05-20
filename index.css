@@ -384,20 +384,40 @@ a {
   z-index: 2;
   overflow: visible;
   pointer-events: none;
+  mix-blend-mode: multiply; /* Soft multiply blending for daylight/Monet mode */
+  opacity: 0.82;
+  transition: mix-blend-mode var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+[data-theme="dark"] .starry-night-sky {
+  mix-blend-mode: screen; /* Glowing screen blending for midnight/Van Gogh mode */
+  opacity: 1;
 }
 
 /* Layer 1: Background Nebula Canvas */
 .hero-blob {
   width: 340px;
   height: 340px;
+  /* Claude Monet's Water Lilies (Nymphéas) impressionistic pastel palette */
+  background: radial-gradient(circle at 20% 20%, hsl(140, 25%, 82%), transparent 60%),
+              radial-gradient(circle at 80% 20%, hsl(325, 45%, 88%), transparent 60%),
+              radial-gradient(circle at 50% 80%, hsl(195, 40%, 78%), transparent 70%),
+              radial-gradient(circle at 80% 80%, hsl(265, 30%, 82%), transparent 60%),
+              linear-gradient(135deg, hsl(150, 20%, 82%) 0%, hsl(205, 30%, 78%) 100%);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  opacity: 0.42; /* Slightly higher opacity to manifest Monet's beautiful pastel colors */
+  filter: blur(32px);
+  animation: blob-animate 16s infinite alternate ease-in-out;
+  position: absolute;
+  transition: background var(--transition-speed) ease, opacity var(--transition-speed) ease;
+}
+
+/* Dark Mode: Vincent van Gogh's "The Starry Night" deep canvas */
+[data-theme="dark"] .hero-blob {
   background: radial-gradient(circle at 30% 30%, hsl(210, 85%, 20%), transparent 60%),
               radial-gradient(circle at 70% 70%, hsl(38, 70%, 15%), transparent 60%),
               linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   opacity: 0.18;
-  filter: blur(30px);
-  animation: blob-animate 16s infinite alternate ease-in-out;
-  position: absolute;
 }
 
 @keyframes blob-animate {
