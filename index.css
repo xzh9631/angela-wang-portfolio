@@ -737,9 +737,32 @@ section {
   font-size: 0.78rem;
   font-weight: 700;
   color: var(--accent-secondary);
+  background-color: hsla(38, 70%, 50%, 0.09);
+  border: 1px solid hsla(38, 70%, 50%, 0.25);
+  padding: 6px 14px;
+  border-radius: 50px;
+  width: fit-content;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 8px;
+  letter-spacing: 0.8px;
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px hsla(38, 70%, 50%, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] .project-award {
+  background-color: hsla(38, 70%, 65%, 0.12);
+  border-color: hsla(38, 70%, 65%, 0.35);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.08);
+}
+
+.project-award:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 4px 12px hsla(38, 70%, 50%, 0.15);
+  background-color: hsla(38, 70%, 50%, 0.15);
+  border-color: hsla(38, 70%, 50%, 0.4);
 }
 
 .project-name {
@@ -771,6 +794,27 @@ section {
   color: var(--text-muted);
   padding: 4px 10px;
   border-radius: 4px;
+}
+
+.live-link-badge {
+  text-decoration: none;
+  font-weight: 600;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--accent-secondary);
+  color: var(--accent-secondary);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.live-link-badge:hover {
+  background: var(--accent-gradient);
+  color: var(--bg-secondary);
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================================================

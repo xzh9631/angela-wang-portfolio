@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   
-  const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+  const currentTheme = savedTheme || 'dark';
   
   // Set initial theme
   document.documentElement.setAttribute('data-theme', currentTheme);
@@ -50,43 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ==========================================================================
-     ANIMATED STATS COUNT-UP
-     ========================================================================== */
-  const statNumbers = document.querySelectorAll('.stat-num');
-  
-  const animateStats = () => {
-    statNumbers.forEach(stat => {
-      const valStr = stat.getAttribute('data-val');
-      const targetVal = parseFloat(valStr);
-      const decimalIdx = valStr.indexOf('.');
-      const decimals = decimalIdx === -1 ? 0 : valStr.length - decimalIdx - 1;
-      const isDecimal = decimals > 0;
-      
-      let currentVal = 0;
-      const duration = 2000; // 2 seconds animation
-      const stepTime = 30; // ms per step
-      const steps = duration / stepTime;
-      const increment = targetVal / steps;
-      
-      let stepCount = 0;
-      
-      const timer = setInterval(() => {
-        currentVal += increment;
-        stepCount++;
-        
-        if (stepCount >= steps) {
-          clearInterval(timer);
-          stat.textContent = isDecimal ? targetVal.toFixed(decimals) : Math.round(targetVal);
-        } else {
-          stat.textContent = isDecimal ? currentVal.toFixed(decimals) : Math.round(currentVal);
-        }
-      }, stepTime);
-    });
-  };
 
-  // Run stats animation after hero fade-in completes
-  setTimeout(animateStats, 500);
 
   /* ==========================================================================
      PROJECT TABS GALLERY FILTERING SYSTEM
