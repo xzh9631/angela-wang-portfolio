@@ -376,25 +376,181 @@ a {
   animation: blob-animate 12s infinite alternate ease-in-out;
 }
 
-.hero-blob-bg {
+/* Starry Night Canvas */
+.starry-night-sky {
   position: absolute;
-  width: 250px;
-  height: 250px;
-  border: 1.5px solid var(--border-color);
-  border-radius: var(--border-radius);
-  transform: rotate(15deg);
-  animation: spin-slow 25s infinite linear;
+  width: 380px;
+  height: 380px;
+  z-index: 2;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Layer 1: Background Nebula Canvas */
+.hero-blob {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle at 30% 30%, hsl(210, 85%, 20%), transparent 60%),
+              radial-gradient(circle at 70% 70%, hsl(38, 70%, 15%), transparent 60%),
+              linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  opacity: 0.18;
+  filter: blur(30px);
+  animation: blob-animate 16s infinite alternate ease-in-out;
+  position: absolute;
 }
 
 @keyframes blob-animate {
-  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) scale(1); }
-  50% { border-radius: 40% 60% 70% 30% / 50% 60% 30% 70%; transform: translate(15px, -20px) scale(1.1); }
-  100% { border-radius: 70% 30% 40% 60% / 40% 70% 50% 30%; transform: translate(-10px, 15px) scale(0.9); }
+  0% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    border-radius: 40% 60% 70% 30% / 50% 60% 30% 70%;
+    transform: rotate(90deg) scale(1.15);
+  }
+  100% {
+    border-radius: 70% 30% 40% 60% / 40% 70% 50% 30%;
+    transform: rotate(180deg) scale(0.95);
+  }
 }
 
-@keyframes spin-slow {
+/* Layer 2: Astronomical Grid slow rotation */
+.celestial-grid {
+  transform-origin: 200px 200px;
+  animation: spin-clockwise 200s infinite linear;
+}
+
+/* Layer 3: The Starry Night Sky Currents */
+.sky-currents {
+  opacity: 0.85;
+}
+
+.current-stroke-heavy {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  animation: flow-currents 12s infinite linear;
+}
+
+.current-stroke-dashed {
+  stroke-dasharray: 6, 10;
+  stroke-dashoffset: 160;
+  animation: flow-currents-reverse 18s infinite linear;
+}
+
+.current-stroke-loop {
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: flow-currents 9s infinite linear;
+}
+
+.current-stroke-thin {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+  animation: flow-currents 14s infinite linear;
+}
+
+@keyframes flow-currents {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flow-currents-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 320;
+  }
+}
+
+/* Layer 4: Concentric Star Halos */
+.halo-star-group {
+  transform-origin: 0 0; /* Star groups translated to their coordinates, so center is 0 0 locally */
+}
+
+/* Opposing spin keyframes for concentric halo rings */
+.halo-ring-clockwise {
+  transform-origin: 0 0;
+  animation: spin-clockwise 25s infinite linear;
+}
+
+.halo-ring-counter {
+  transform-origin: 0 0;
+  animation: spin-counter-clockwise 18s infinite linear;
+}
+
+.star-core {
+  transform-origin: 0 0;
+  animation: star-pulse 2.5s infinite alternate ease-in-out;
+}
+
+/* Specific delays for individual stars to create organic complexity */
+.star-a .star-core { animation-delay: 0.2s; }
+.star-b .star-core { animation-delay: 0.8s; }
+.star-c .star-core { animation-delay: 1.4s; }
+.star-d .star-core { animation-delay: 0.5s; }
+
+/* Layer 5: Crescent Moon */
+.crescent-moon {
+  transform-origin: 0 0;
+}
+
+.moon-shape {
+  transform-origin: 0 0;
+  animation: moon-glow 4s infinite alternate ease-in-out;
+}
+
+.moon-aura-pulse {
+  transform-origin: 0 0;
+  animation: moon-aura 6s infinite alternate ease-in-out;
+}
+
+@keyframes moon-glow {
+  0% { transform: scale(0.96); opacity: 0.95; filter: drop-shadow(0 0 5px var(--accent-secondary)); }
+  100% { transform: scale(1.04); opacity: 1; filter: drop-shadow(0 0 15px var(--accent-secondary)); }
+}
+
+@keyframes moon-aura {
+  0% { transform: scale(0.85); opacity: 0.45; }
+  100% { transform: scale(1.15); opacity: 0.7; }
+}
+
+/* Layer 6: Twinkling Stardust Field */
+.dust-twinkle-fast {
+  animation: twinkle 1.5s infinite ease-in-out alternate;
+}
+
+.dust-twinkle-medium {
+  animation: twinkle 3s infinite ease-in-out alternate;
+  animation-delay: 0.5s;
+}
+
+.dust-twinkle-slow {
+  animation: twinkle 5s infinite ease-in-out alternate;
+  animation-delay: 1.2s;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.15; transform: scale(0.75); }
+  50% { opacity: 0.55; }
+  100% { opacity: 1; transform: scale(1.25); }
+}
+
+@keyframes star-pulse {
+  0% { transform: scale(0.85); opacity: 0.75; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes spin-clockwise {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@keyframes spin-counter-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
 }
 
 .scroll-indicator {
